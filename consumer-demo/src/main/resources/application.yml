@@ -4,4 +4,5 @@ spring:
 eureka:     #eureka配置项
   client:
     service-url:      #配置eureka服务地址
+#      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka      #eureka集群环境配置eureka服务地址
       defaultZone: http://127.0.0.1:10086/eureka      #配置eureka服务地址

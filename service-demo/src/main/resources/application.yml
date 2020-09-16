@@ -7,10 +7,11 @@ spring:
     username: root
     password: 123456
   application:      #应用配置项
-    name: service-demo      #配置此工程名称
+    name: service-demo      #配置当前应用名称
 mybatis:      #mybatis配置
   type-aliases-package: com.hufei.entity      #配置实体类别名包路径，配置这个配置项在mapper里面就不需要写全限定名了，只需要写对应实体类名即可
 eureka:     #eureka配置项
   client:
     service-url:      #配置eureka服务地址
+#      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka      #eureka集群环境配置eureka服务地址
       defaultZone: http://127.0.0.1:10086/eureka      #配置eureka服务地址
