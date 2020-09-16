@@ -1,12 +1,16 @@
-server:
+server:     #服务配置项
   port: 8083      #配置tomcat端口配置项
-
 spring:
   datasource:     #数据源配置项设置
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springboot_test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
     username: root
     password: 123456
-
+  application:      #应用配置项
+    name: service-demo      #配置此工程名称
 mybatis:      #mybatis配置
   type-aliases-package: com.hufei.entity      #配置实体类别名包路径，配置这个配置项在mapper里面就不需要写全限定名了，只需要写对应实体类名即可
+eureka:     #eureka配置项
+  client:
+    service-url:      #配置eureka服务地址
+      defaultZone: http://127.0.0.1:10086/eureka      #配置eureka服务地址

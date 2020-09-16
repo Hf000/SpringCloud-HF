@@ -12,6 +12,7 @@
     <modules>
         <module>service-demo</module>
         <module>consumer-demo</module>
+        <module>eureka-server</module>
     </modules>
     <!--springboot父工程依赖版本控制-->
     <parent>

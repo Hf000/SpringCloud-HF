@@ -10,17 +10,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <!--工程名称-->
-    <artifactId>consumer-demo</artifactId>
+    <artifactId>eureka-server</artifactId>
     <dependencies>
-        <!--引入springBoot的web启动依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!--引入eureka客户端依赖-->
+        <!--引入Eureka服务端启动依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
     </dependencies>
 </project>
