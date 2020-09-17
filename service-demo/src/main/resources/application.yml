@@ -15,3 +15,6 @@ eureka:     #eureka配置项
     service-url:      #配置eureka服务地址
 #      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka      #eureka集群环境配置eureka服务地址
       defaultZone: http://127.0.0.1:10086/eureka      #配置eureka服务地址
+  instance:     #配置eureka注册服务实例配置项
+    prefer-ip-address: true     #更倾向使用ip地址而不是host名称
+    ip-address: 127.0.0.1     #指定具体的ip地址
