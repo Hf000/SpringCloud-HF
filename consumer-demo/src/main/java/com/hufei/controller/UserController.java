@@ -29,7 +29,7 @@ public class UserController {
 //        List<ServiceInstance> serviceInstanceList = discoveryClient.getInstances("service-demo");           //获取eureka服务中的服务地址
 //        ServiceInstance serviceInstance = serviceInstanceList.get(0);           //获取服务列表中的某一个服务，一般集群环境，这里需要用负载均衡的方式获取服务地址
 //        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/user/" + id;
-        String url = "http://service-demo/user/"+id;        //开启负载均衡后会根据服务id：service-demo自动获取服务地址，默认轮询
+        String url = "http://service-demo/user/"+id;        //开启负载均衡后会根据服务提供应用名称：service-demo自动获取服务地址，默认轮询
         return restTemplate.getForObject(url, User.class);          //restTemplate可以对json格式字符串进行反序列化
     }
 }

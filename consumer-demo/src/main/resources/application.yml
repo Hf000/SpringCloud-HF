@@ -9,6 +9,6 @@ eureka:     #eureka配置项
       defaultZone: http://127.0.0.1:10086/eureka      #配置eureka注册服务地址
     registry-fetch-interval-seconds: 30     #客户端拉取eureka服务列表地址时间间隔，默认30秒
 
-#service-demo:     #配置eureka注册服务地址列表配置项，服务提供应用id
+#service-demo:     #配置eureka注册服务地址列表配置项，服务提供应用名称
 #  ribbon:     #ribbon配置项
 #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule      #配置ribbon负载均衡算法为随机，默认是轮询
