@@ -1,12 +1,13 @@
 server:     #服务配置项
   port: 8083      #配置tomcat端口配置项
+#  port: ${port:8083}      #当JVM虚拟机中获取到port有值则取port，否则取8083，这样还是方便idea编辑器配置多个副本启动
 
 spring:     #spring配置项
   datasource:     #数据源配置项设置
     driver-class-name: com.mysql.jdbc.Driver      #数据库驱动类地址
     url: jdbc:mysql://127.0.0.1:3306/springboot_test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false      #数据库连接地址
     username: root      #数据库账号
-    password: 123456      #数据库密码
+    password: root      #数据库密码
   application:      #应用配置项
     name: service-demo      #配置当前应用名称
 
