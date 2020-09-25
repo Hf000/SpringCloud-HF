@@ -2,6 +2,8 @@ package com.hufei;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +14,10 @@ import org.springframework.web.client.RestTemplate;
  * @CreateTime:2020-09-16
  * @Description:springboot启动类
  */
-@SpringBootApplication          //springboot启动类注解
-@EnableDiscoveryClient          //开启eureka客户端发现功能
+//@SpringBootApplication          //springboot启动类注解
+//@EnableDiscoveryClient          //开启eureka客户端发现功能
+//@EnableCircuitBreaker           //开启Hystrix熔断器注解
+@SpringCloudApplication         //此注解为组合注解，包含以上三个注解
 public class ConsumerDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConsumerDemoApplication.class, args);

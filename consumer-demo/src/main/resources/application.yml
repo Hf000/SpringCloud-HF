@@ -12,3 +12,11 @@ eureka:     #eureka配置项
 #service-demo:     #配置eureka注册服务地址列表配置项，服务提供应用名称
 #  ribbon:     #ribbon配置项
 #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule      #配置ribbon负载均衡算法为随机，默认是轮询
+
+hystrix:      #hystrix配置项
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000     #请求超时时间配置项，默认1000

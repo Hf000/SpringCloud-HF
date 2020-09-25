@@ -3,6 +3,7 @@ personal project
 1. SpringCloud项目搭建
 2. EUreka服务注册中心
 3. Ribbon客户端负载均衡器，默认算法：轮询
+4. Hystrix,服务熔断器：线程隔离，服务降级
 
 idea快捷键
    ctrl + shift + alt + s 开启当前项目的结构体structure
@@ -13,6 +14,7 @@ idea快捷键
    ctrl + alt + b 从接口方法跳转到实现类方法
    ctrl + alt + s 快捷打开idea的setting窗口
    ctrl + alt + l 格式化代码
+   ctrl + alt + t 捕获异常快捷键
  
    ctrl + y 删除当前行
    ctrl + d 向下复制当前行
