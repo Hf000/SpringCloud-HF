@@ -21,6 +21,11 @@ public class UserController {
 
     @RequestMapping("/{id}")
     public User queryUserById(@PathVariable Long id) {
+        /*try {
+            Thread.sleep(6000);//测试hystrix请求超时配置
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         return userServiceImpl.queryUserById(id);
     }
 

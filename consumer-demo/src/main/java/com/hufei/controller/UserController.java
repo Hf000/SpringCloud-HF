@@ -32,6 +32,7 @@ public class UserController {
     @HystrixCommand         //开启统一处理，在类上指定错误回调方法
 //    public User queryUserById(@PathVariable Long id){
     public String queryUserById(@PathVariable Long id){         //方法的返回类型和回调方法的返回类型要保持一致
+//        if (id == 1) throw new RuntimeException();//服务熔断测试，服务请求失败达到一定的阀值时，会自动开启熔断器，默认请求不低于20次的情况下，失败率达到50%，休眠5秒后会处于半开状态
         /*String url = "http://localhost:8083/user/"+id;
         return restTemplate.getForObject(url, User.class);*/
 //        List<ServiceInstance> serviceInstanceList = discoveryClient.getInstances("service-demo");           //获取eureka服务中的服务地址
@@ -41,12 +42,12 @@ public class UserController {
         return restTemplate.getForObject(url, String.class);          //restTemplate可以对json格式字符串进行反序列化
     }
 
-    public String queryUserByIdFailBack(Long id) {         //回调方法，返回类型必须指定为String，参数也要保持一致
+    public String queryUserByIdFailBack(Long id) {         //指定服务降级回调方法，返回类型必须指定为String，参数也要保持一致
         log.error("查询用户信息失败，用户id：{}", id);      //记录日志，“{}”在这里是占位符，后面的参数id会替代这个占位符
         return "网络错误，请稍后重试！";
     }
 
-    public String defaultMethodFailBack() {         //回调方法，返回类型必须指定为String
+    public String defaultMethodFailBack() {         //该类全局服务降级回调方法，返回类型必须指定为String
         return "默认提示：网络错误，请稍后重试！";
     }
 }

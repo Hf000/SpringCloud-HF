@@ -4,6 +4,7 @@ personal project
 2. EUreka服务注册中心
 3. Ribbon客户端负载均衡器，默认算法：轮询
 4. Hystrix,服务熔断器：线程隔离，服务降级
+5. Feign,使服务间的调用更加容易,访问方式比直接使用Ribbon的restTemplate方式更加优雅，集成了Ribbon和Hystrix熔断配置项，在Feign中可以直接配置相关配置项
 
 idea快捷键
    ctrl + shift + alt + s 开启当前项目的结构体structure
