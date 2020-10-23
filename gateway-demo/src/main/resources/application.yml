@@ -1,0 +1,6 @@
+server:     #服务配置项
+  port: 10010     #修改服务启动端口
+
+spring:     #spring配置项
+  application:      #应用配置项
+    name: gateway-demo      #修改应用名称

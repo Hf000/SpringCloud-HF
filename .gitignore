@@ -3,3 +3,4 @@
 /consumer-demo/target/
 /.idea/
 /eureka-server/target/
+/gateway-demo/gateway-demo.iml
