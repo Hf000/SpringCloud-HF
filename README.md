@@ -2,9 +2,9 @@
 personal project
 1. SpringCloud项目搭建
 2. EUreka服务注册中心
-3. Ribbon客户端负载均衡器，默认算法：轮询
-4. Hystrix,服务熔断器：线程隔离，服务降级
-5. Feign,使服务间的调用更加容易,访问方式比直接使用Ribbon的restTemplate方式更加优雅，集成了Ribbon和Hystrix熔断配置项，在Feign中可以直接配置相关配置项
+3. Ribbon客户端负载均衡器（只是用于负载均衡，不能进行通信，单独使用时实际是基于restTemplate进行服务调用（http协议）），默认算法：轮询
+4. Hystrix,服务熔断器：线程隔离，服务降级（如果开启了，那么采用feign进行服务间通信时，是需要重新设置请求头参数的，因为此时所有的请求头参数都会置为空，如果需要请求参数，需要将线程池隔离改成信号量隔离）
+5. Feign,使服务间的调用更加容易（基于http协议）,实际就是封装了restTemplate，集成了Ribbon和Hystrix熔断配置项，在Feign中可以直接配置相关配置项
 
 idea快捷键
    ctrl + shift + alt + s 开启当前项目的结构体structure
