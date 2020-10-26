@@ -8,7 +8,8 @@ spring:     #spring配置项
     gateway:      #gateway配置项
       routes:       #配置路由
         - id: service-demo-route      #路由id，根据个人习惯命名
-          uri: http://127.0.0.1:8083      #代理服务器地址
+#          uri: http://127.0.0.1:8083      #代理服务器地址，这里的服务地址写死了，在实际编码中明显是不合理的
+          uri: lb://service-demo      #代理服务器地址；面向服务的路由：lb://service-demo；lb：表示LoadBalanced，基于Ribbon的负载均衡，从eureka中获取对应服务名称的地址；service-demo：必须是在eureka中已经注册了的程序服务应用名称
           predicates:     #路由断言，可以匹配请求的路径
             - Path=/user/**     #表示请求路径中带user的都会执行该路由, 配置多个断言用","隔开
 #        - id: consumer-demo-route      #配置多个路由id
