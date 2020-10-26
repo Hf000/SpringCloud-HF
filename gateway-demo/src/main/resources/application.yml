@@ -4,3 +4,21 @@ server:     #服务配置项
 spring:     #spring配置项
   application:      #应用配置项
     name: gateway-demo      #修改应用名称
+  cloud:      #springcloud配置项
+    gateway:      #gateway配置项
+      routes:       #配置路由
+        - id: service-demo-route      #路由id，根据个人习惯命名
+          uri: http://127.0.0.1:8083      #代理服务器地址
+          predicates:     #路由断言，可以匹配请求的路径
+            - Path=/user/**     #表示请求路径中带user的都会执行该路由, 配置多个断言用","隔开
+#        - id: consumer-demo-route      #配置多个路由id
+#          uri: http://127.0.0.1:8080
+#          predicates:
+#            - Path=/user/**,/userFeign/**
+
+eureka:     #eureka配置项
+  client:     #eureka客户端配置项
+    service-url:      #eureka服务路径配置项
+      defaultZone: http://127.0.0.1:10086/eureka      #eureka默认服务路径
+  instance:     #eureka实例配置项
+    prefer-ip-address: true     #更倾向使用ip地址而不是host名称
