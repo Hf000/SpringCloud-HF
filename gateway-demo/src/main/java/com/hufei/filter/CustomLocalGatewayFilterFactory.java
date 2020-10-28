@@ -14,7 +14,7 @@ import java.util.List;
 *@CreateTime:2020-10-28
 *@Description:自定义局部过滤器
 */
-@Component              //交给spring容器管理
+@Component              //因为是spring组件，所以需要交给spring容器管理
 public class CustomLocalGatewayFilterFactory extends AbstractGatewayFilterFactory<CustomLocalGatewayFilterFactory.Config> {
 
     public static final String PARAM_NAME = "param";//和下面自定义配置类中的参数保持一致
