@@ -17,12 +17,13 @@ spring:     #spring配置项
           filters:      #局部过滤器配置项，只针对当前路由有效
             - PrefixPath=/user      #添加请求路径的前缀：http://localhost:10010/8 --> http://localhost:10010/user/8
 #            - StripPrefix=1     #去除请求路径的前缀；1表示过滤第1层的路径：http://localhost:10010/api/user/8 --> http://localhost:10010/user/8，2表示过滤前两层的路径：http://localhost:10010/api/user/8 --> http://localhost:10010/8
+            - CustomLocal=name     #自定义局部过滤器，“=”后面跟需要拦截的参数名称，需要跟请求的参数名称一致
 #        - id: consumer-demo-route      #配置多个路由id
 #          uri: http://127.0.0.1:8080
 #          predicates:
 #            - Path=/user/**,/userFeign/**
       default-filters:      #默认过滤器，对所有路由都生效，实现了GatewayFilterFactory接口的全局过滤器配置项
-        - AddResponseHeader=X-Response-Red, Blue      #配置过滤器，=后面是参数以及值，配置多个直接换行另外添加即可
+        - AddResponseHeader=param, hufei      #配置过滤器，=后面是参数以及值，配置多个直接换行另外添加即可
 #        - AddResponseHeader=customize-param, hufei     #配置多个
 
 
