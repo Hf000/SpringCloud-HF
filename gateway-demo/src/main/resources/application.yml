@@ -26,7 +26,14 @@ spring:     #spring配置项
         - AddResponseHeader=param, hufei      #配置过滤器，=后面是参数以及值，配置多个直接换行另外添加即可
 #        - AddResponseHeader=customize-param, hufei     #配置多个
 #      自定义全局过滤器不需要有配置，只需要实现GlobalFilter接口即可
-
+      globalcors:
+        cors-configurations:      #跨域请求配置项
+          '[/**]':      #表示对所有访问到网关服务的请求地址
+            #allowedOrigins: *      #这种写法或者下面的都可以，* 表示全部
+            allowedOrigins:       #表示允许的服务器地址
+              - "http://docs.spring.io"
+            allowedMethods:      #表示允许的方法
+              - GET
 
 eureka:     #eureka配置项
   client:     #eureka客户端配置项
@@ -34,3 +41,17 @@ eureka:     #eureka配置项
       defaultZone: http://127.0.0.1:10086/eureka      #eureka默认服务路径
   instance:     #eureka实例配置项
     prefer-ip-address: true     #更倾向使用ip地址而不是host名称
+
+hystrix:      #gateway默认集成了Hystrix，有些值需要配置，否则就会使用默认值
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000     #请求超时时间配置项，默认1000
+
+ribbon:     #gateway默认集成了Ribbon，有些值需要配置，否则就会使用默认值
+  ConnectTimeout: 1000      #连接超时时长，单位：毫秒
+  ReadTimeout: 2000     #数据通信超时时长，单位：毫秒
+  MaxAutoRetries: 0     #当前服务器的重试次数
+  MaxAutoRetriesNextServer: 0     #重试多少次服务
