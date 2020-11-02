@@ -12,7 +12,7 @@ import java.util.List;
 /**
 *@Author:hufei
 *@CreateTime:2020-10-28
-*@Description:自定义局部过滤器
+*@Description:自定义局部过滤器，类名必须以GatewayFilterFactory结尾，配置文件中只需要配置除去GatewayFilterFactory的前面部分即可
 */
 @Component              //因为是spring组件，所以需要交给spring容器管理
 public class CustomLocalGatewayFilterFactory extends AbstractGatewayFilterFactory<CustomLocalGatewayFilterFactory.Config> {

@@ -24,6 +24,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {  //实现Orde
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {//全局过滤器拦截方法
         ServerHttpRequest request = exchange.getRequest();//获取请求对象，参数
         String token = request.getQueryParams().getFirst("token");//拦截参数名称为token的参数
+        System.out.println("全局过滤器参数token："+token);
         if (StringUtils.isBlank(token)) {//判断是否有请求参数token
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);//设置响应状态码为未授权
             return exchange.getResponse().setComplete();//将此请求设置成完成
