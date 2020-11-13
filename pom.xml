@@ -15,6 +15,7 @@
         <module>eureka-server</module>
         <module>gateway-demo</module>
         <module>config-demo</module>
+        <module>service-demo2</module>
     </modules>
     <!--springboot父工程依赖版本控制-->
     <parent>

@@ -1,7 +1,7 @@
-package com.hufei.controller;
+package com.hufei.serviceDemo2.controller;
 
-import com.hufei.entity.User;
-import com.hufei.service.IUserService;
+import com.hufei.serviceDemo2.entity.User;
+import com.hufei.serviceDemo2.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +26,7 @@ public class UserController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
-        System.out.println("这里是8083的调用");
+        System.out.println("这里是8084的调用");
         return userServiceImpl.queryUserById(id);
     }
 
