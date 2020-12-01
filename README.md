@@ -9,7 +9,7 @@ personal project
 6. Gateway：网关服务，gateway的filter过滤器的执行生命周期与springMVC的拦截器类似，不同的是springMVC的拦截器有三个方法：preHandle（预处理），
     postHandle（后处理，在视图渲染之前调用），afterCompletion（完成时处理，视图渲染完毕后调用，但是preHandle必须返回true才会调用）；而gateway的
     filter只有两个，“pre”和“post”分别会在请求被执行前调用和被执行后调用； 默认集成了Ribbon和Hystrix
-7.Config：配置中心，将经常发生改变的配置文件放到git仓库中动态加载，配置中心中yml文件命名规则：{application}-{profile}.yml或.properties
+7. Config：配置中心，将经常发生改变的配置文件放到git仓库中动态加载，配置中心中yml文件命名规则：{application}-{profile}.yml或.properties
     一般经常修改的配置项放在配置中心，固定不变的的就放在bootstrap.yml配置文件，bootstrap.yml加载优先于application.yml
 
 idea快捷键
