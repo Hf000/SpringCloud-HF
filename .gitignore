@@ -1,11 +1,3 @@
-/springcloud.iml
-/service-demo/target/
-/consumer-demo/target/
-/.idea/
-/eureka-server/target/
-/gateway-demo/gateway-demo.iml
-/gateway-demo/target/
-/config-demo/target/
-/service-demo2/target/
-/config-demo/config-demo.iml
-/service-demo2/service-demo2.iml
+*.idea
+*.iml
+target/
